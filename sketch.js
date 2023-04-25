@@ -9,9 +9,10 @@ function preload(){
   arrowImage = loadImage("arrow0.png");
   bowImage = loadImage("bow0.png");
   red_balloonImage = loadImage("red_balloon0.png");
-  // carregue a imagem do balão verde
-  // carregue a imagem do balão rosa
-  // carregue a imagem do balão azul
+  blue_balloonImage = loadImage("blue_balloon0.png");
+  green_balloonImage = loadImage("green_balloon0.png");
+  pink_balloonImage = loadImage("pink_balloon0.png");
+
 
   
 }
@@ -54,16 +55,16 @@ function draw() {
    
   //criando inimigos continuamente
   
-  
+  var select_balloon = Math.round(random(1,4))
   if (World.frameCount % 100 == 0) {
    switch(select_balloon ){
-    case 1: //chamar o balão vermelho
+    case 1: redBalloon()
     break;
-    case 2: // chamar o balão azul
+    case 2: blueBalloon()
     break;
-    case 3: // chamar o balão verde
+    case 3: greenBalloon()
     break;
-    case 4: // chamar o balão rosa
+    case 4: pinkBalloon()
     break;
     default:break;
   }}
@@ -92,25 +93,26 @@ function redBalloon() {
 }
 
 function blueBalloon() {
-  //crieSprite para o balão
-  //adicioneImagem para o balão
-  // adicione velocidade para fazer o balão se mover
-  // mudar a dimensão do balão
-  // atriubua tempo de vida ao balão
+  var blue = createSprite(0,Math.round(random(20, 370)), 10, 10);
+  blue.addImage(blue_balloonImage);
+  blue.velocityX = 3;
+  blue.lifetime = 150;
+  blue.scale = 0.1;
 }
-
 function greenBalloon() {
-  //crieSprite para o balão
-  //adicioneImagem para o balão
-  // adicione velocidade para fazer o balão se mover
-  // mudar a dimensão do balão
-  // atriubua tempo de vida ao balão
+  var green = createSprite(0,Math.round(random(20, 370)), 10, 10);
+  green.addImage(green_balloonImage);
+  green.velocityX = 3;
+  green.lifetime = 150;
+  green.scale = 0.1;
+ 
 }
 
 function pinkBalloon() {
- //crieSprite para o balão
-  //adicioneImagem para o balão
-  // adicione velocidade para fazer o balão se mover
-  // mudar a dimensão do balão
-  // atriubua tempo de vida ao balão
+  var pink = createSprite(0,Math.round(random(20, 370)), 10, 10);
+  pink.addImage(pink_balloonImage);
+  pink.velocityX = 3;
+  pink.lifetime = 150;
+  pink.scale = 0.1;
+ 
 }
